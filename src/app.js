@@ -11,6 +11,9 @@ console.log(__filename);
 console.log(path.join(__dirname, '../public'));
 
 const app = express();  
+// port defined by HEROKU environment, if locally then use 3000 
+// Using OR operator to use fallback value if process.env.PORT does not exist
+const port = process.env.PORT || 3000;  
 
 // DEFINING the PATH this webserver
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -166,8 +169,8 @@ app.get('*', (req, res)=> {
 
 // argv1 => port that the server will be listening to 
 // argv2 => 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000');
+app.listen(port, () => {
+    console.log('Server is up on port: ' + port);
 })
 
 
