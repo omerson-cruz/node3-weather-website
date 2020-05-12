@@ -22,14 +22,13 @@ const forecast = (latitude, longitude, callback) => {
                 callback('Unable to connect to weather app service', undefined)
             } else if (body.message) {
                 callback('Unable to find location', undefined);
-            } else {    
+            } else {   
                 callback(undefined, body.current.weather[0].description + '. It is currently ' + body.current.temp +
-                    ' degrees out. There is a ' + body.current.clouds + '% chance of raining.');
+                    ' degrees out. There is a ' + body.current.clouds + '% chance of raining. The humidity is ' + body.current.humidity + '. The wind speed is ' + body.current.wind_speed);
             }
         }
     );
 }
-
 
 
 
