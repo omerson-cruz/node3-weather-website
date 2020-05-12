@@ -1,0 +1,4 @@
+{
+    "watch": ["./", "../public", "../templates"],
+    "ext": "js, css, html,hbs"
+}
